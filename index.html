@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102438">
+  <meta name="description" content="Interactive ship inventory demo for InventSea.">
+  <title>InventSea · Ship inventory</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>Invent<span>Sea</span></div>
+      <span class="demo-label">Demo data</span>
+    </div>
+  </header>
+
+  <main class="workspace">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="vessel">M/V Asterion</p>
+        <h1 id="page-title">Ship inventory</h1>
+        <p class="hero-detail">Galley · Engine stores · Medical stores</p>
+      </div>
+      <div class="progress-summary">
+        <div class="progress-copy">
+          <strong id="progress-number">0 / 12</strong>
+          <span>items counted</span>
+        </div>
+        <progress id="progress" max="12" value="0" aria-label="Items counted"></progress>
+      </div>
+    </section>
+
+    <nav class="steps" aria-label="Inventory steps">
+      <button class="step" data-action="list" aria-current="step"><span>1</span>Items</button>
+      <button class="step" data-action="count"><span>2</span>Count</button>
+      <button class="step" data-action="review"><span>3</span>Review</button>
+    </nav>
+
+    <div class="layout">
+      <section class="panel" id="screen" aria-labelledby="screen-title"></section>
+      <aside class="side panel" aria-labelledby="side-title">
+        <h2 id="side-title">Progress by store</h2>
+        <div id="department-progress"></div>
+        <button class="text-button reset" data-action="reset">Reset demo</button>
+      </aside>
+    </div>
+    <p id="announcement" class="sr-only" role="status"></p>
+    <noscript>Enable JavaScript to use the demo.</noscript>
+  </main>
+  <section id="print-report" class="print-report"></section>
+</body>
+</html>
